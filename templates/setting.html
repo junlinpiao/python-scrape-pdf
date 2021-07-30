@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Benefit Data</title>
+    <style>
+        form {
+            border: 3px solid #f1f1f1;
+        }
+        input[type=file] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            opacity: 0.8;
+        }
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+        .container {
+            padding: 16px;
+            width: 80%;
+            margin: 0 auto;
+        }
+        h3.stop_anchor a:hover{
+            color: blue !important;
+        }
+        h3.stop_anchor, p {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="imgcontainer">
+        <h1>Settings</h1>
+    </div>
+        <form action="{{ url_for('scraping') }}" method="post" enctype="multipart/form-data">
+            <div class="container">
+                <label for="excel_file"><b>Select Benefit Excel file</b></label>
+                <input type="file" name="excel_file">
+                <button type="submit">Run</button>
+            </div>
+        </form>
+</body>
+</html>
